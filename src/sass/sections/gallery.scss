@@ -1,0 +1,17 @@
+@import '../utilities/mixins';
+
+.gallery {
+    width: 100%;
+    height: 70vh;
+    @include small-devices {
+        height: 70vh;
+    }
+    @include large-devices {
+        height:90vh;
+        width: 70%;
+    }
+&__content{
+width: 100%;
+height: 100%;
+}
+}

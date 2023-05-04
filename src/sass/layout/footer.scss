@@ -1,0 +1,68 @@
+@use '../utilities/colors';
+@import '../utilities/mixins';
+
+.footer {
+	background-color: colors.$secondary-color;
+	padding-top:.5em;
+	padding-bottom: 1.5em;
+	color: black;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+        @include medium-devices{
+            flex-direction: row;
+        }
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 1em;
+        
+		&-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 1em;
+		}
+		&-img {
+			width: 50px;
+			&--title {
+				width: 120px;
+			}
+		}
+	}
+	&__social {
+		margin-bottom: 1em;
+		&-img {
+			padding: 0.5em;
+			width: 52px;
+			border-radius: 12px;
+			transition: transform 0.6s;
+			cursor: pointer;
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+	}
+	&__hr {
+		border: 1px solid colors.$secondary-font-color;
+	}
+	&__bottom-text {
+		margin-top: 1em;
+		text-align: center;
+		font-family: 'Kite One', sans-serif;
+		font-weight: bold;
+		font-size: 3rem;
+	}
+	&__author {
+		margin-top: 1rem;
+		text-align: center;
+		&-img {
+			width: 30px;
+		}
+	}}

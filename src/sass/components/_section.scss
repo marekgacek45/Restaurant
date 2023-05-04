@@ -1,0 +1,55 @@
+@use '../utilities/colors';
+@import '../utilities/mixins';
+
+
+.section {
+    display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 2em;
+	scroll-margin-top: 70px;
+
+	&__header {
+		text-align: center;
+		// font-family: 'Amatic SC', cursive;
+		font-family: 'Kite One', sans-serif;
+		font-size: 6rem;
+        border-bottom: 3px solid colors.$secondary-color;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 2em 2em 0 2em;
+		
+		@include large-devices {
+			flex-direction: row;
+		}
+		&-img {
+			width: 100%;
+			min-width: 300px;
+			max-width: 400px;
+			border-radius: 6px 20px 6px 20px;
+			padding: 1em;
+			
+			
+			&--right {
+				@include large-devices {
+					order: 1;
+				}
+			}
+           
+		}
+		&-text {
+			text-align: center;
+			padding: 0 1em;
+			@include large-devices {
+				margin: 2em;
+				padding: 1em;
+			}
+		}
+	}
+}

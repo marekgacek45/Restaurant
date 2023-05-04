@@ -1,0 +1,55 @@
+@keyframes fade-left {
+	0% {
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes fade-right {
+	0% {
+		transform: translateX(100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+@keyframes opacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes clip-path {
+    from{clip-path: circle(3.9% at 49% 49%);
+	}
+    to{clip-path: circle(70% at 49% 49%);}
+}
+
+.reveal {
+	opacity: 0;
+}
+.reveal.show {
+	opacity: 1;
+}
+.show.fade-left {
+	animation: fade-left 1s ease-in;
+}
+.show.fade-right {
+	animation: fade-right 1s ease-in;
+}
+.show.opacity {
+	animation: opacity 3s ease-in;
+}
+.show.clip-path{
+    animation: clip-path 1s cubic-bezier(0, 0, 0.58, 1);
+}
+

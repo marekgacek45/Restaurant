@@ -1,0 +1,16 @@
+@mixin small-devices {
+    @media (min-width: 576px) { @content; }
+  }
+  @mixin medium-devices {
+    @media (min-width: 768px) { @content; }
+  }
+  @mixin large-devices {
+    @media (min-width: 992px) { @content; }
+  }
+  @mixin xl-devices {
+    @media (min-width: 1200px) { @content; }
+  }
+  @mixin xxl-devices {
+    @media (min-width: 1400px) { @content; }
+  }
+

@@ -1,0 +1,31 @@
+@use '../utilities/colors';
+.button {
+	position: relative;
+	border: none;
+	background-color: colors.$primary-color;
+	color: colors.$primary-font-color;
+	padding: 1em 2em;
+	border-radius: 8px;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: bold;
+	animation: opacity 4s ease-in;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		display: block;
+		transition: 0.5s;
+		top: -20px;
+		left: -140px;
+		height: 160%;
+		width: 50%;
+		background-image: linear-gradient(-90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+		// background-color: red;
+		transform: rotate(20deg);
+	}
+	&:hover::before {
+		left: 130%;
+	}
+}

@@ -1,0 +1,57 @@
+@use'../utilities/colors';
+@import'../utilities/mixins';
+@import'../utilities/animations';
+
+
+.header {
+	display: flex;
+	flex-direction: column;
+	margin-top: 3em;
+    height: 100vh;
+	background-image: url('../img/header.jpg');
+	// background-image: url('/src/img/header.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	z-index: 0;
+    @include small-devices {
+        margin-top: 0;
+    }
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 95%;
+
+		&-logo {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+            animation: opacity 2s ease-out;
+			
+			&-img {
+				width: 30%;
+				@include large-devices {
+					width: 25%;
+				}
+				&--title {
+					width: 60%;
+					@include large-devices {
+						width: 55%;
+					}
+				}
+			}
+		}
+		&-heading {
+			padding: 0 1em;
+			text-align: center;
+			font-family: 'Kite One', sans-serif;
+			font-size: 3rem;
+			color: colors.$secondary-color;
+            animation: opacity 3s ease-in;
+		}
+	}
+}

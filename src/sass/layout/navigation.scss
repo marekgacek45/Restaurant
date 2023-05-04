@@ -1,0 +1,102 @@
+@use '../utilities/colors';
+@import '../utilities/mixins';
+
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	font-family: 'Kite One', sans-serif;
+	background-color: colors.$secondary-color;
+	color: colors.$secondary-font-color;
+	z-index: 10000000;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.5em 2em;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&-img {
+			width: 50px;
+			cursor: pointer;
+			&--title {
+				width: 120px;
+			}
+		}
+	}
+
+	&__list {
+		display: none;
+		@include large-devices {
+			display: flex;
+		}
+
+		&-mobile {
+			position: fixed;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			top: 70px;
+			left: 0;
+			padding: 8em 0 12em 0;
+			width: 100%;
+			height: calc(100vh - 70px);
+			background-color: colors.$secondary-color;
+			transform: translateX(100%);
+			transition: 0.6s;
+			z-index: 10000;
+
+			&--active {
+				transform: translateX(0%);
+			}
+			@include large-devices {
+				display: none;
+			}
+		}
+
+		&-item {
+			position: relative;
+			padding: 0.3em 0;
+			margin-right: 2em;
+			color: colors.$secondary-font-color;
+			font-weight: bold;
+			text-transform: uppercase;
+			cursor: pointer;
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				width: 0;
+				border-bottom: 3px solid colors.$secondary-font-color;
+				transition: all 0.3s;
+			}
+
+			&::before {
+				right: 50%;
+			}
+			&::after {
+				left: 50%;
+			}
+
+			&:hover::before,
+			&:hover::after {
+				width: 50%;
+			}
+
+			&-mobile {
+				font-size: 2rem;
+				margin-right: 0;
+			}
+		}
+	}
+}
