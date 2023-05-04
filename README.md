@@ -11,7 +11,7 @@
 
 
 
-# Prosta Web-Page
+# Restaurant Web-Page
 
 <div align="left">
 
